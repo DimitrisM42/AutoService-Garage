@@ -1,0 +1,543 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body { 
+    font-family: Arial, sans-serif; 
+    background: #f3f3f3; 
+    padding: 100px 20px; 
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000c7;
+    color: #fff;
+    display: flex;
+    
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+#logo {
+    position: absolute;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    
+}
+
+.navbar li {
+    margin-right: 20px;
+    font-style: bold;
+    
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.profile-tab {
+    display: flex;
+    position: absolute;
+    right: 56px;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 5px 10px ;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(93, 93, 93, 0.2);
+    cursor: pointer;
+
+}
+
+.dropdown-menu {
+    opacity: 0;
+    position: fixed;
+    width: 122px;
+    top: 68px; 
+    right: 15px;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 8px 10px ;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(69, 69, 69, 0.404);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform : translateY(-20px);
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+  
+
+.dropdown-menu a {
+    
+    display: block;
+    padding: 8px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+}
+  
+.dropdown-menu a:hover {
+    background-color: #878787;
+}
+
+/* ---------- Mobile menu ---------- */
+
+.menu-icon {
+    padding: 14px 0 0 14px;
+    position: fixed;
+    display: none;
+    scale: 2.4;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    flex-direction: column;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 40%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #00000085;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-20px);
+}
+
+
+.mobile-menu a {
+    pointer-events: none;
+    
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+}
+
+.mobile-profile-tab {
+    display: flex;
+    flex-direction: column ;
+    margin: 0 auto;
+    color: white;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 5px 10px ;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(93, 93, 93, 0.2);
+}
+
+.mobile-profile-tab img {
+    margin: 5px 0;
+}
+
+
+.mobile-dropdown-menu {
+    margin-top: 10px;
+    font-size: 10px;
+    gap: 20px;
+    width: fit-content;
+}
+
+.mobile-dropdown-menu a {
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(69, 69, 69, 0.404);
+}
+
+.mobile-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+  
+
+
+/* ---------- Home section ---------- */
+
+.home-section {
+    background: linear-gradient(130deg, rgba(0, 0, 0, 0.9) 30%, rgba(255, 255, 255, 0) 100%), url('../images/CarInWorkshop.jpg');
+    background-size: cover;
+    
+    background-position: center;
+    height: 100vh;
+    
+}
+
+.home-section div {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 120px;
+    color: #ffffff;
+}
+
+.home-section h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.home-section p {
+    max-width: 600px;
+    word-spacing: 2px;
+    line-height: 1.3;
+}
+
+.home-section button {
+    background-color: #005eff;
+    color: #ffffff;
+    border: solid 1px #0033ffb5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+
+
+/* ---------- Services section ---------- */
+
+.services-section {
+    padding-top: 80px;
+    padding-bottom: 180px;
+    background: radial-gradient(#f3f3f3 40%, #bebebe 100%);
+    background-position: center;
+}
+
+.services-section .title {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.container-column{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align:justify;
+    align-items: center;
+    gap: 20px;
+    max-width: 1500px;
+
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 280px;
+    max-width: 1200px;
+    width: calc(100% - 20px);
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    background-color: rgba(132, 132, 132, 0.306);
+    border: 2px solid rgba(181, 181, 181, 0.669);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 230px;
+    width: 400px;
+    transition: scale 450ms;
+    text-align: center;
+
+}
+
+
+.card img {
+    margin: 0 auto;
+    display: block; 
+    margin-top: 30px;
+    border-radius: 8px;
+    opacity: 0.9;
+    width: 100px;
+    height: 85px;
+}
+
+.card h1 {
+    margin-top: 45px !important;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before {
+
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.361),
+        transparent 40%
+    );
+    border-radius: inherit;
+    content:"";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+
+/* ---------- About section ---------- */
+
+.about-section {
+    padding: 100px 0;
+    background: linear-gradient(230deg, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0.5) 100%), url('../images/top-view-toolbox.jpg');
+    background-size: cover;
+    
+    background-position: bottom;
+    min-height: fit-content;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section div { 
+    
+    margin: auto;
+    width: 50%;
+    color: #ffffff;
+    text-align: justify;
+}
+
+.about-section h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.about-section p {
+    max-width: 800px;
+    word-spacing: 2px;
+    line-height: 1.3;
+}
+
+/* ---------- Footer section ---------- */
+
+.site-footer {
+    background-color: #111;
+    color: #f0f0f0;
+    padding: 30px 60px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #f0f0f000;
+    margin: 0 20px;
+    font-size: 20px;
+    
+}
+
+.social-links a i{
+    color: white;
+    scale: 1.8;
+    margin-bottom: 10px;
+}
+  
+
+/* ---------------- Animations ---------------- */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale : 1;
+    }
+}
+
+@keyframes appearLeft {
+    from {
+    transform: translateX(-60px);
+    opacity: 0;
+    }
+    to {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+
+.appearable{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 38%;
+}
+
+.appearable-op-left{
+    animation: appearLeft 1.2s ease-in-out;
+    
+}
+
+
+/* ---------------- Media Queries ---------------- */
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+
+    .navbar {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    .mobile-menu{
+        padding: 30px 0;
+
+    }
+
+    .mobile-menu a {
+        font-size: 22px;
+    }
+
+    .home-section div{
+        margin-top: 150px;
+        margin-left: 40px;
+    } 
+
+    h1 {
+        font-size: 55px  !important;
+        max-width: 250px; 
+    }
+
+    .home-section p{
+        font-size: 18px;
+        width: 450px;
+        
+    }
+
+    #cards {
+        gap: 60px;
+    }
+
+    .about-section {
+        height: fit-content;
+    }
+
+    .about-section div { 
+    
+        margin: auto;
+        width: 80%;
+        text-align: justify;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    html{
+        font-size: 14px; 
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    .home-section div{
+        margin-top: 150px;
+        margin-left: 40px;
+    } 
+
+    h1 {
+        font-size: 30px  !important;
+        max-width: 250px; 
+    }
+
+    .home-section p{
+        width: 250px;
+        
+    }
+
+    .services-section {
+        padding: 30px 0;
+    }
+
+    .services-section .title {
+        padding: 0;
+    }
+
+    #cards {
+        scale: 0.8;
+        gap: 60px;
+    }
+
+    .about-section {
+        height: fit-content;
+    }
+
+    .about-section div { 
+    
+        margin: auto;
+        width: 80%;
+        color: #ffffff;
+        text-align: justify;
+    }
+
+    .social-links img {
+        scale: 0.8;
+    }
+
+}
